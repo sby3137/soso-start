@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    width:100%;
+    min-height: 100vh;
+    display:flex;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+}
+
+.ghost{
+    animation: moveUpDown 2s infinite;
+    position: absolute;
+
+}
+@keyframes moveUpDown {
+    0% {
+        margin-top:0px;
+    }
+    50%{
+        margin-top: -10px;
+    }
+    100%{
+        margin-top:0px;
+    }
+}
+
+.ghost .body {
+    width: 120px;
+    height: 160px;
+    background-color: #fff;
+    border-top-left-radius: 45%;
+    border-top-right-radius:45%;     
+    position: relative;
+}
+
+.ghost .body:hover{
+    background-color: blue;
+    height: 400px;
+   
+}
+
+.ghost .body .face{
+    flex-wrap: wrap;
+    display: flex;/* 가로나란히 */
+    justify-content: space-between;
+    width: 70px;
+    position: absolute;
+    top:40px;
+    left:50%;
+    transform: translateX(-50%);
+    }
+
+.ghost .body .face .eye{
+    width:19px;
+    height:19px;
+    background-color: #499;
+    border-radius:50%;
+    
+  }
+
+  .ghost .body .face .eye:hover{
+      width:25px;
+      height: 25px;
+      background-color:blueviolet;
+      animation: moveUpDown 1s infinite;
+  }
+  @keyframes moveUpDown {
+      0%{
+          margin-top:0%;
+      }
+      50%{margin-top:-50%;}
+
+      100%{margin-top:0%;}
+
+    }
+
+.ghost .body .face .nose{
+    width: 5px;
+    height: 15px;
+    background-color:orange;
+    border-radius:50%;
+    position: absolute;
+    top: 25px;
+    left:50%;
+    transform: translateX(-50%);
+    
+}
+
+
+.ghost .body .face .mouse{
+    width: 33px;
+    height: 15px;
+    background-color:plum;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    position:absolute;
+    top:50px;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.ghost .bottom{
+    display: flex;
+    
+}
+
+.ghost .bottom .leg{
+    background-color: #fff;
+    width:24px;
+    height: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.ghost .bottom .leg:nth-child(2n){
+    position: relative;
+    top :-6px;
+    background-color: #000;
+    border-radius: 50%;
+}  
+
+.ghost .bottom .leg:hover{
+    background-color:blue ;
+    height: 300px;
+}
